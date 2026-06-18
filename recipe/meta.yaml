@@ -1,15 +1,15 @@
-{% set version = "2026.4-1" %}
+{% set version = "2026.6-1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-gparotation
-  version: "{{ version|replace("-", "_") }}"
+  version: {{ version|replace("-", "_") }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/GPArotation_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/GPArotation/GPArotation_{{ version }}.tar.gz
-  sha256: 7a25e68a2cd05cae6a1379b01ec00c3dc668eaf40e350ff64676e61b075be8b3
+  sha256: ab2a77df57bb2d528353822c0ef2e96f24252d18dfa437526c14a672862d94ae
 
 build:
   number: 0
@@ -39,11 +39,8 @@ test:
 about:
   home: https://cran.r-project.org/package=GPArotation
   license: GPL-2.0-or-later
-  summary: Gradient projection algorithms for orthogonal and oblique rotation of factor loadings
-    matrices in factor analysis. Implements a comprehensive set of rotation criteria
-    including quartimax, quartimin, oblimin, geomin, simplimax, the Crawford-Ferguson
-    family, and target rotation, among others. Supports multiple random starts. For
-    details see Bernaards and Jennrich (2005) <doi:10.1177/0013164404272507>.
+  summary: Gradient projection algorithms for orthogonal and oblique rotation of factor loadings matrices in factor analysis. Implements a comprehensive set of rotation criteria including quartimax, quartimin, oblimin, geomin, simplimax, the Crawford-Ferguson family, and target rotation, among others. Supports multiple
+    random starts. For details see Bernaards and Jennrich (2005) <doi:10.1177/0013164404272507>.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
