@@ -1,15 +1,15 @@
-{% set version = "2026.6-1" %}
+{% set version = "2026.7-1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-gparotation
-  version: "{{ version|replace("-", "_") }}"
+  version: {{ version|replace("-", "_") }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/GPArotation_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/GPArotation/GPArotation_{{ version }}.tar.gz
-  sha256: ab2a77df57bb2d528353822c0ef2e96f24252d18dfa437526c14a672862d94ae
+  sha256: 8802a636005fa1d9afea11898960a574e628155edf02e63ea27ebc2d84ebe6fc
 
 build:
   number: 0
